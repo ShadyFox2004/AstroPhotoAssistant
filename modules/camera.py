@@ -71,25 +71,25 @@ def change_man_cfg(iso, aperture, shutter_speed):
     return 0
 
 
-def take_dark():
+def take_darks():
     """
     Take dark for calibrating the iso
     """
     print("Taking dark frames")
     change_man_cfg('6400', '3.5', '1/8000')
-    take_shot("dark/", 20)
+    take_shot("./darks/", 20)
 
 
-def take_bias():
+def take_biases():
     """
     Calibrate the noise by taking bias frames
     """
     print("Taking bias frames")
     change_man_cfg('6400', '3.5', '1')
-    take_shot("bias/", 20)
+    take_shot("./bias/", 20)
 
 
-def take_light():
+def take_flats():
     """
     Calibrate the color by taking shots of even light
     """
@@ -98,7 +98,7 @@ def take_light():
         "Put paper in front of your camera and put your phone in the white background, or do it in the sun\npress "
         "enter once done")
     change_man_cfg('6400', '3.5', '1/80')
-    take_shot("light/", 20)
+    take_shot("./flats/", 20)
 
 
 print('SUCCESS!!!')

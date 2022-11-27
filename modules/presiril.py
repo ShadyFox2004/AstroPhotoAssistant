@@ -1,6 +1,3 @@
-import sys
-import os
-
 from pysiril.siril import *
 from pysiril.wrapper import *
 
@@ -45,28 +42,34 @@ def light(light_dir, process_dir):
 # ==============================================================================
 # 2. Starting pySiril
 app = Siril()
-workdir = "."
+cmd = Wrapper(app)  # 2. its wrapper
 
-try:
-    cmd = Wrapper(app)  # 2. its wrapper
-    app.Open()  # 2. ...and finally Siril
 
-    # 3. Set preferences
-    process_dir = '../process'
-    cmd.set16bits()
-    cmd.setext('fit')
+def process(workdir):
+    """
+    Process the astro-photos in siril
+    """
 
-    # 4. Prepare master frames
-    master_bias(workdir + '/biases', process_dir)
-    master_flat(workdir + '/flats', process_dir)
-    master_dark(workdir + '/darks', process_dir)
+    try:
 
-    # 5. Calibrate the light frames, register and stack them
-    light(workdir + '/lights', process_dir)
+        app.Open()  # 2. ...and finally Siril
 
-except Exception as e:
-    print("\n**** ERROR *** " + str(e) + "\n")
+        # 3. Set preferences
+        process_dir = './process'
+        cmd.set16bits()
+        cmd.setext('fit')
 
-# 6. Closing Siril and deleting Siril instance
-app.Close()
-del app
+        # 4. Prepare master frames
+        master_bias(workdir + '/biases', process_dir)
+        master_flat(workdir + '/flats', process_dir)
+        master_dark(workdir + '/darks', process_dir)
+
+        # 5. Calibrate the light frames, register and stack them
+        light(workdir + '/lights', process_dir)
+
+    except Exception as e:
+        print("\n**** ERROR *** " + str(e) + "\n")
+
+    # 6. Closing Siril and deleting Siril instance
+    app.Close()
+    del app
