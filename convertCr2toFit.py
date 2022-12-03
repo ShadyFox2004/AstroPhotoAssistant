@@ -12,7 +12,6 @@ images = []
 for x in os.listdir(path):
     if x.endswith(".CR2"):
         # Prints only text file present in My Folder
-        print(x)
         images.append(rawpy.imread(path+x))
 
 hdulist = fits.HDUList([])
@@ -25,4 +24,3 @@ for i in images:
     hdulist.append(hdu) # add file 
 
 hdulist.info()
-hdulist.writeto("jupyter.fit")

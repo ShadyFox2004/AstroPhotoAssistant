@@ -1,6 +1,9 @@
 from pysiril.siril import *
 from pysiril.wrapper import *
 
+app = Siril()
+cmd = Wrapper(app)  # 2. its wrapper
+
 
 # ==============================================================================
 # EXAMPLE OSC_Processing with functions wrapper
@@ -41,8 +44,6 @@ def light(light_dir, process_dir):
 
 # ==============================================================================
 # 2. Starting pySiril
-app = Siril()
-cmd = Wrapper(app)  # 2. its wrapper
 
 
 def process(workdir):
@@ -71,5 +72,8 @@ def process(workdir):
         print("\n**** ERROR *** " + str(e) + "\n")
 
     # 6. Closing Siril and deleting Siril instance
+
+
+def exit_siril():
     app.Close()
     del app
