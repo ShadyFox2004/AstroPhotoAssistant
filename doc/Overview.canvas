@@ -1,0 +1,33 @@
+{
+	"nodes":[
+		{"id":"8abbdd550ca614fd","x":-410,"y":-218,"width":570,"height":294,"type":"group","label":"New Software"},
+		{"id":"24dca48cf4d2b0c4","x":-390,"y":-200,"width":250,"height":60,"type":"text","text":"Gento"},
+		{"id":"a1dd984499707ade","x":-110,"y":-200,"width":250,"height":60,"type":"text","text":"Raspbian"},
+		{"id":"825a4e23b88112cf","x":-235,"y":6,"width":250,"height":50,"type":"text","text":"INDI DRIVER\n- [ ] Tested"},
+		{"id":"5d0a2abb2a34758a","x":-235,"y":-100,"width":250,"height":61,"type":"text","text":"INDI SERVER\n- [ ] Tested"},
+		{"id":"08796371e33cce10","x":-855,"y":-251,"width":290,"height":276,"type":"group","label":"Software Components"},
+		{"id":"d453cd5127ce0986","x":-835,"y":-251,"width":250,"height":60,"type":"text","text":"Windows 10 pro\n- [x] Tested"},
+		{"id":"5a8e9da4d3c2a9f0","x":-835,"y":-151,"width":250,"height":61,"type":"text","text":"ASCOM Device manager\n- [ ] Tested"},
+		{"id":"622868ece9dbab8c","x":-835,"y":-45,"width":250,"height":50,"type":"text","text":"ASCOM Autostar Driver\n- [ ] Tested"},
+		{"id":"adcef3f105769666","x":-835,"y":-311,"width":250,"height":60,"type":"text","text":"Deprecated"},
+		{"id":"58bd3966e779a3a7","x":-290,"y":260,"width":330,"height":227,"type":"group","label":"Hardware Component"},
+		{"id":"8aa7ff9eb822b4d2","x":-270,"y":371,"width":250,"height":92,"type":"text","text":"Audiostar Controller\n- [x] Tested"},
+		{"id":"cec76559555ca60c","x":-270,"y":294,"width":250,"height":77,"type":"text","text":"USB to RS232\nalso know as [[COM PORT]] \n- [x] Tested"},
+		{"id":"38107ef095c98bb7","x":-270,"y":540,"width":250,"height":143,"type":"text","text":"Telescope mount  Meade protocol  - Autostar.\nStarNavigator."},
+		{"id":"d34e967ba917164e","x":178,"y":120,"width":250,"height":60,"type":"text","text":"SSH"},
+		{"id":"e3d8a4233eace937","x":178,"y":-100,"width":250,"height":50,"type":"text","text":"Kstars"}
+	],
+	"edges":[
+		{"id":"c3dd3e809c33d13e","fromNode":"d453cd5127ce0986","fromSide":"bottom","toNode":"5a8e9da4d3c2a9f0","toSide":"top"},
+		{"id":"578fb9739b0f6cd0","fromNode":"5a8e9da4d3c2a9f0","fromSide":"bottom","toNode":"622868ece9dbab8c","toSide":"top"},
+		{"id":"89c630487fc35ffa","fromNode":"cec76559555ca60c","fromSide":"bottom","toNode":"8aa7ff9eb822b4d2","toSide":"top"},
+		{"id":"90b12ed4fd77f31d","fromNode":"8aa7ff9eb822b4d2","fromSide":"bottom","toNode":"38107ef095c98bb7","toSide":"top"},
+		{"id":"51f9e87244945801","fromNode":"24dca48cf4d2b0c4","fromSide":"bottom","toNode":"5d0a2abb2a34758a","toSide":"top"},
+		{"id":"193cd9f0bfc4c61c","fromNode":"a1dd984499707ade","fromSide":"bottom","toNode":"5d0a2abb2a34758a","toSide":"top"},
+		{"id":"56cf8eeba90bdfb1","fromNode":"5d0a2abb2a34758a","fromSide":"bottom","toNode":"825a4e23b88112cf","toSide":"top"},
+		{"id":"94ce8780234c86f6","fromNode":"825a4e23b88112cf","fromSide":"bottom","toNode":"58bd3966e779a3a7","toSide":"top"},
+		{"id":"d600f301e9fa0970","fromNode":"e3d8a4233eace937","fromSide":"top","toNode":"a1dd984499707ade","toSide":"right"},
+		{"id":"40c1054fe9932a93","fromNode":"d34e967ba917164e","fromSide":"top","toNode":"e3d8a4233eace937","toSide":"bottom"},
+		{"id":"8d6a77b13281d6a9","fromNode":"5d0a2abb2a34758a","fromSide":"bottom","toNode":"d34e967ba917164e","toSide":"left"}
+	]
+}
